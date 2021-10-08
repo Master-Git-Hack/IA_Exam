@@ -16,6 +16,8 @@
 For more references check requirements.txt on Backend folder.
 
 -   Flask
+-   Flask-Cors
+-   python-dotenv
 
 ### React
 
