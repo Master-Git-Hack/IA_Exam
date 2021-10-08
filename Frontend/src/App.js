@@ -31,8 +31,7 @@ class App extends Component {
             });
     };
     render() {
-        const { next_sku, orders } = this.state;
-        console.log(orders);
+        const { next_sku } = this.state;
         return (
             <Container className='tp-3'>
                 <Tabs defaultActiveKey='profile' id='uncontrolled-tab-example' className='mb-3'>

@@ -78,7 +78,7 @@ class Tabla extends Component {
                 });
             });
     };
-    ren;
+    s;
     render() {
         const { pending, in_process, completed, delivered, canceled } = this.state;
         console.log(pending, in_process, completed, delivered, canceled);
@@ -86,29 +86,74 @@ class Tabla extends Component {
             <Container fluid>
                 <Tabs defaultActiveKey='profile' id='uncontrolled-tab-example' className='mb-3'>
                     <Tab eventKey='pending' title='Pending'>
-                        {pending.map((element, idx) => {
-                            return <Order id={idx} sku={element.sku} order={element.orders} status={element.status} />;
-                        })}
+                        {pending.length > 0
+                            ? pending.map((element, idx) => {
+                                  return (
+                                      <Order
+                                          id={idx}
+                                          sku={element.sku}
+                                          order={element.orders}
+                                          status={element.status}
+                                      />
+                                  );
+                              })
+                            : null}
                     </Tab>
                     <Tab eventKey='in_process' title='In Process'>
-                        {in_process.map((element, idx) => {
-                            return <Order id={idx} sku={element.sku} order={element.orders} status={element.status} />;
-                        })}
+                        {in_process.length > 0
+                            ? in_process.map((element, idx) => {
+                                  return (
+                                      <Order
+                                          id={idx}
+                                          sku={element.sku}
+                                          order={element.orders}
+                                          status={element.status}
+                                      />
+                                  );
+                              })
+                            : null}
                     </Tab>
                     <Tab eventKey='completed' title='Completed'>
-                        {completed.map((element, idx) => {
-                            return <Order id={idx} sku={element.sku} order={element.orders} status={element.status} />;
-                        })}
+                        {completed.length > 0
+                            ? completed.map((element, idx) => {
+                                  return (
+                                      <Order
+                                          id={idx}
+                                          sku={element.sku}
+                                          order={element.orders}
+                                          status={element.status}
+                                      />
+                                  );
+                              })
+                            : null}
                     </Tab>
                     <Tab eventKey='delivered' title='Delivered'>
-                        {delivered.map((element, idx) => {
-                            return <Order id={idx} sku={element.sku} order={element.orders} status={element.status} />;
-                        })}
+                        {delivered.length > 0
+                            ? delivered.map((element, idx) => {
+                                  return (
+                                      <Order
+                                          id={idx}
+                                          sku={element.sku}
+                                          order={element.orders}
+                                          status={element.status}
+                                      />
+                                  );
+                              })
+                            : null}
                     </Tab>
                     <Tab eventKey='canceled' title='Canceled'>
-                        {canceled.map((element, idx) => {
-                            return <Order id={idx} sku={element.sku} order={element.orders} status={element.status} />;
-                        })}
+                        {canceled.length > 0
+                            ? canceled.map((element, idx) => {
+                                  return (
+                                      <Order
+                                          id={idx}
+                                          sku={element.sku}
+                                          order={element.orders}
+                                          status={element.status}
+                                      />
+                                  );
+                              })
+                            : null}
                     </Tab>
                 </Tabs>
             </Container>
