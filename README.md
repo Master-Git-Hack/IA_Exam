@@ -36,12 +36,12 @@ python run.py
 
 2. With backend running, you can test api routes with a client with the following endpoints, using your server address:
 
-|  #  | Reference      |             Route              | Method(s) |                                    Params                                     |
-| :-: | -------------- | :----------------------------: | :-------: | :---------------------------------------------------------------------------: |
-|  1  | Validate stock |       /api/manage/stock        |    GET    |                                       -                                       |
-|  2  | Get all orders |    /api/transaction/get/all    |    GET    |                                       -                                       |
-|  3  | Add Order      |      /api/transaction/add      |   POST    | sku:<integer>,status<string> order:<Array>[{type:<string>,quantity<integer>}] |
-|  4  | Change Status  | /api/transaction/update/status |   PATCH   |                         sku:<integer>,status<string>                          |
+|  #  | Reference      |             Route              | Method(s) |                                     Params                                      |
+| :-: | -------------- | :----------------------------: | :-------: | :-----------------------------------------------------------------------------: |
+|  1  | Validate stock |       /api/manage/stock        |    GET    |                                        -                                        |
+|  2  | Get all orders |    /api/transaction/get/all    |    GET    |                                        -                                        |
+|  3  | Add Order      |      /api/transaction/add      |   POST    | sku:(integer),status:(string) order:(Array)[{type:(string),quantity:(integer)}] |
+|  4  | Change Status  | /api/transaction/update/status |   PATCH   |                          sku:<integer>,status<string>                           |
 
 1. If you need to test Frontend to test backend, execute the following command:
 
