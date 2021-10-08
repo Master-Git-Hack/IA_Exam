@@ -48,6 +48,12 @@ def update():
     order =  Orders()
     return jsonify({'response':order.update(data['sku'],data['order'])})
 
+@app.route('/api/transaction/update/status',methods = ['PATCH'])
+def change_status(): 
+    data = request.get_json()
+    print(f'\n\n\n {data} \n\n\n')
+    order =  Orders()
+    return jsonify({'response':order.change_status(data['sku'],data['status'])})
 
 @app.route('/api/transaction/remove',methods = ['DELETE'])
 def remove(): 

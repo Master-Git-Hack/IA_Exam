@@ -6,7 +6,7 @@ class Orders():
     @staticmethod
     def verify_sku(self, sku):
         if len(self.data) > 0:
-            if sku in self.data.keys():
+            if int(sku) in self.data.keys():
                 return True
             else:
                 return False
@@ -14,13 +14,13 @@ class Orders():
 
     @staticmethod
     def find_sku_index(self, sku):
-        if sku in self.data.keys():
-            return list(self.data.keys()).index(sku)
+        if int(sku) in self.data.keys():
+            return list(self.data.keys()).index(int(sku))
         else: 
             return -1
 
     def get_one(self, sku):
-        idx = Orders.find_sku_index(sku)
+        idx = Orders.find_sku_index(self,sku)
         if idx != -1:
             return self.data[idx]
         else:
@@ -41,7 +41,7 @@ class Orders():
             return False
 
     def update(self, sku, order):
-        idx = Orders.find_sku_index(sku)
+        idx = Orders.find_sku_index(self,sku)
         if idx != -1:
             self.data[idx] = order
             return True
@@ -49,22 +49,19 @@ class Orders():
             return False
 
     def get_status(self, sku):
-        idx = Orders.find_sku_index(sku)
+        idx = Orders.find_sku_index(self,sku)
         if idx != -1:
             return self.data[idx]['status']
         else:
             return False
 
     def change_status(self, sku, status):
-        idx = Orders.find_sku_index(sku)
-        if idx != -1:
-            self.data[idx]['status'] = status
-            return True
-        else:
-            return False
+        self.data[int(sku)]['status'] = status
+        return True
+
 
     def delete(self, sku):
-        if Orders.verify_sku(sku):
+        if Orders.verify_sku(self,sku):
             self.data.pop(sku)
             return True
         else:
