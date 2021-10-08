@@ -23,7 +23,7 @@ For more references check requirements.txt on Backend folder.
 
 For more references check package.json on Frontend folder.
 
--react-bootstrap
+-   react-bootstrap
 
 ## How to run it.
 
